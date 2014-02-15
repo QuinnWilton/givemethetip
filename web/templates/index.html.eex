@@ -3,24 +3,18 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="/static/main.css">
 	<link rel="shortcut icon" href="/static/favicon.ico" />
+	<script src='jquery-1.8.3.min.js'></script>
+	<script type="text/javascript">
+	</script>
 </head>
 <body>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=596684460417786";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-
 	<div id="giveMeTheTip">GIVE ME THE TIP</div>
 	<p style="margin:0;">Such tip, much Facebook, very appreciation. Wow.</p>
 	<div id="icons">
-		<div class="landingIcon"><img class="" id="lock" src="/static/lock.png"/><p>Super<br/> Secure</p></div>
-		<div class="landingIcon"><img class="" id="gift" src="/static/gift.png"/><p>Start with 10<br/> free Dogecoins</p></div>
-		<div class="landingIcon"><img class="" id="heart" src="/static/heart.png"/><p>Appreciate<br/> Content</p></div>
+		<div class="landingIcon"><img class="" id="lock" src="/static/lock.png"/><p>Such<br/> Secure</p></div>
+		<div class="landingIcon"><img class="" id="gift" src="/static/gift.png"/><p>Much free Dogecoins<br/> (10, actually)</p></div>
+		<div class="landingIcon"><img class="" id="heart" src="/static/heart.png"/><p>Very Content<br/> Appreciation</p></div>
 	</div>
-	<div><a class="button" id="logInButton" href="javascript:alert('signup :)')"><img id="fbLogo" src='../../priv/static/fbLogo.png'/>LOGE IN</a></div>
+	<div><a class="button" id="logInButton" href="javascript:alert('signup :)')"><img id="fbLogo" src='/static/fbLogo.png'/>LOGE IN</a></div>
 </body>
 </html>
