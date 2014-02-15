@@ -95,9 +95,11 @@ div.landingIcon img{
 	width:100%;
 	margin-bottom:20px;
 	text-align:center;
+	vertical-align:middle;
 }
-#refilllabel{
+#refillLabel{
 	padding-right:20px;
+	display:inline;
 }
 #notifications{
 	width:60%;
@@ -110,6 +112,11 @@ div.landingIcon img{
 	text-align:left;
 }
 
+#notifications .notificationRow .notificationText{
+	vertical-align:middle;
+}
+
+
 #balance{
 	width:100%;
 	font-family:bebasNeue;
@@ -121,8 +128,9 @@ div.landingIcon img{
 	font-size:80px;
 }
 
-#balance #units{
+#units{
 	color:#fec436;
+	font-size:42px;
 }
 
 #notifications .notificationRow{
@@ -170,12 +178,16 @@ input.customInput{
 #notifications img{
 	width:24px;
 	padding-right:10px;
+	vertical-align:middle;
 }
 
 #logOut{
 	text-align:right;
 	margin-right:170px;
 	margin-top:65px;
+	position:absolute;
+	top:-30px;
+	padding-left:calc(80% - 70px);
 }
 
 #wallet{
@@ -184,6 +196,7 @@ input.customInput{
 
 #refillHeader{
 	padding-right:20px;
+	vertical-align:middle;
 }
 #content{
 	width:60%;
@@ -194,4 +207,10 @@ input.customInput{
 	height:20px;
 	background-color: black;
 	position: absolute;
+}
+
+
+#test{
+	height:50px; 
+	line-height:50px;
 }

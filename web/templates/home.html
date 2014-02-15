@@ -1,33 +1,34 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../../priv/static/main.css">
-	<link rel="shortcut icon" href="../../priv/static/favicon.ico" />
+	<link rel="shortcut icon" href="/static/favicon.ico" />
 </head>
 <body>
 	<div id="fb-root"></div>
 	<script></script>
 	<div id="logOut"><a  href="#">LOGE OUT</a></div>
 	<div id="giveMeTheTip">GIVE ME THE TIP</div>
+	<div class="whiteBox" id="refill">
+		<h2 id="refillHeader">SUCH REFILL</h2><p id="" style="display:inline;">Send Dogecoins to: <input id="wallet" type="text" class="customInput" /></p>
+	</div>
 	<div id="content">
-		<div class="whiteBox" id="refill">
-			<div id="test"><h2 id="refillHeader">SUCH REFILL</h2><p id="refilllabel">Send Dogecoins to: </p><input id="wallet" type="text" class="customInput" /></div>
-		</div>
-	
+		<div id="leftPane">
 			<div class="whiteBox" id="notifications">
 				<h2>MUCH NOTIFICATION</h2>
 				<div class="notificationRow">
 					<img src="../../priv/static/notification_heart.png"/>
-					You tipped <span class="name" id="name1">John Appleseed</span> <span class="amount" id="amount1">6</span> Dogecoins
+					<span class="notificationText">You tipped <span class="name" id="name1">John Appleseed</span> <span class="amount" id="amount1">6</span> Dogecoins</span>
 				</div>
 				<div class="notificationRow">
 					<img src="../../priv/static/notification_jar.png"/>
-					<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
+					<span class="notificationText"><span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins</span>
 				</div>
 				<div class="notificationRow">
 					<img src="../../priv/static/notification_jar.png"/>
-					<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
+					<span class="notificationText"><span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins<span>
 				</div>
-			</div><!-- notification -->
+			</div>
+		</div>
 		<div id="rightPane">
 			<div class="whiteBox" id="balance">
 				<h2 style="display:block;">BALANCE, WOW</h2>
