@@ -1,0 +1,77 @@
+//requests from extension must have key
+route(fbUserName,key)
+{
+	if (UserDb.get(fbUserName).key == key || action == "login")
+		continue route;
+
+	return 401 Unauthorized;
+}
+
+//called the first time a user logs in, only one that doesn't use key
+login(fbUserName, fbAuthKey)
+{
+
+	if (!fb.verify(fbUserName, fbAuthKey))
+		return 401 Unauthorized
+
+	balance = getBalance(fbUserName);
+	Sent = TransactionDb.where(sender==fbUserName);
+	Recieved = TransactionDb.where(receiver==fbUserName);
+	key = UserDb.get(fbUserName).key;
+	dogeAddr = dogeApi.getAddressByLabel(fbUserName);
+
+	return mainPage; //render page with balance, key, sent, recieved, dogeAddr
+}
+
+//called from the web page
+widthdrawl(fbUserName, wAddr, amount)
+{
+
+	//check if wAddr is real dogecoin address
+
+	if (getBalance(fbUserName) < amount)
+		return 401 Not Enough Money;
+
+	TransactionDb.add(fbUserName, wAddr, amount);
+
+	balance = getBalance(fbUserName);
+	Sent = TransactionDb.where(sender==fbUserName);
+	Recieved = TransactionDb.where(receiver==fbUserName);
+	key = UserDb.get(fbUserName).key;
+	dogeAddr = dogeApi.getAddressByLabel(fbUserName);
+
+	return mainPage; //render page with balance, key, sent, recieved, dogeAddr
+}
+
+//returns balance, if no account, creates account and returns 10 and adds to DB
+getBalance(fbUserName)
+{
+	thisAddr = dogeApi.getAddrByLabel(fbUserName);
+
+	if (thisAddr != "No matching addresses")
+	{
+		myDoge = dogeApi.getRecieved(fbUserName);
+		dogeOut = TransactionDb.where(sender==fbUserName).sum(amount);
+		dogeIn = TransactionDb.where(receiver==fbUserName).sum(amount);
+		return myDoge + dogeIn - dogeOut;
+	}
+
+	dogeApi.create(fbUserName);
+	
+	TransactionDb.add(masterStarter, fbUserName, 10); //give them 10 doge
+	UserDb.add(fbUserName, generateNewKey());
+
+	dogeIn = TransactionDb.where(receiver==fbUserName).sum(amount);
+
+	return dogeApi.recieved(fbUserName) + dogeIn;
+}
+
+//called by the chrome extension
+transfer(fbUserName, toUserName)
+{
+	if (getBalance(fbUserName) < amount)
+		return 401 Not Enough Money;
+
+	TransactionDb.add(fbUserName, toUserName, amount);
+	return getBalance(fbUserName);
+}
