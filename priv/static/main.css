@@ -4,6 +4,11 @@
 }
 
 @font-face{
+	font-family:dosisRegular;
+	src: url(Dosis-Regular.ttf);
+}
+
+@font-face{
 	font-family:dosisBold;
 	src: url(Dosis-Bold.ttf);
 }
@@ -14,6 +19,7 @@ body{
 	text-align:center;
 	font-family:dosisBold;
 	font-size:25px;
+	margin:auto 0;
 }
 
 #giveMeTheTip{
@@ -25,6 +31,14 @@ body{
 	margin-top:70px;
 }
 
+h2{
+	font-family:bebasNeue;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+	font-size:36px;
+}
+
 a{
 	text-decoration: none;
 	color: #343745;
@@ -33,7 +47,7 @@ a{
 
 div.landingIcon{
 	display:inline-block;
-	margin:0 40px;
+	width:240px;
 }
 
 div.landingIcon img{
@@ -45,14 +59,18 @@ div.landingIcon img{
 	margin-bottom:70px;
 }
 
+.button{
+	border:0;
+	font-family:bebasNeue;
+	font-size:30px;
+}
+
 #logInButton{
 	border:0;
 	background-color:#343745;
 	color:#ffffff;
 	border-radius:5px;
 	padding:10px 40px;
-	font-family:bebasNeue;
-	font-size:30px;
 }
 
 #fbLogo{
@@ -60,4 +78,85 @@ div.landingIcon img{
 	height:30px;
 	vertical-align:middle;
 	padding-right:15px;
+}
+
+.whiteBox{
+	background-color:#FFFFFF;
+	border-radius:15px;
+	display:inline-block;
+	font-size:25px;
+	padding:35px 0px;
+
+}
+
+#refill{
+	width:1025px;
+	height:100px;
+	margin-bottom:20px;
+}
+
+#notifications{
+	width:620px;
+	margin-right:20px;
+	height:500px;
+}
+
+#balance{
+	width:380px;
+	font-family:bebasNeue;
+}
+
+#balance #number{
+	color:#e75849;
+	font-size:80px;
+}
+
+#balance #units{
+	color:#fec436;
+}
+
+#notifications .notificationRow{
+	background-color: #fefbf3;
+	border-radius:15px;
+	margin-bottom:10px;
+	padding:25px;
+}
+
+#withdrawButton{
+	color:#e75849;
+	background-color:#343745;
+	border-radius:15px;
+	padding:10px 35px;
+}
+
+#withdraw{
+	width:380px;
+}
+
+input.customInput{
+	border-radius:15px;
+	background-color:#fdf2d8;
+	font-family:dosisRegular;
+	font-size:24px;
+	border:0;
+	text-align:center;
+	-moz-box-shadow:    inset 0 0 10px -10px #000000;
+  -webkit-box-shadow: inset 0 0 10px -5px #000000;
+  box-shadow:         inset 1px 4px 4px -5px #000000;
+
+}
+
+#withdraw #enterAmount{
+		padding:10px;
+		width:185px;
+}
+
+#leftPane{
+	display:inline-block;
+	width:620px;
+}
+
+#rightPane{
+	display:inline-block;
+	width:380px;
 }
