@@ -1,0 +1,13 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+	<link rel="shortcut icon" href="/static/favicon.ico" />
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script></script>
+
+	<div id="giveMeTheTip">GIVE ME THE TIP</div>
+	
+</body>
+</html>

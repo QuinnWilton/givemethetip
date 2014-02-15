@@ -18,11 +18,11 @@ body{
 
 #giveMeTheTip{
 	color: #e75849;
-	font-size:64px;
+	font-size:50px;
 	font-family:bebasNeue;
 	margin:0;
 	padding:0;
-	margin-top:50px;
+	margin-top:70px;
 }
 
 a{
@@ -38,5 +38,22 @@ div.landingIcon{
 
 #icons{
 	margin-top:70px;
-	margin-bottom:20px;
+	margin-bottom:70px;
+}
+
+#logInButton{
+	border:0;
+	background-color:#343745;
+	color:#ffffff;
+	border-radius:5px;
+	padding:10px 40px;
+	font-family:bebasNeue;
+	font-size:30px;
+}
+
+#fbLogo{
+	width:30px;
+	height:30px;
+	vertical-align:middle;
+	padding-right:15px;
 }
