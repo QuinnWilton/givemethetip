@@ -36,7 +36,8 @@ h2{
 	font-weight:normal;
 	margin:0;
 	padding:0;
-	font-size:36px;
+	font-size:37px;
+	display:inline;
 }
 
 a{
@@ -84,15 +85,17 @@ div.landingIcon img{
 	background-color:#FFFFFF;
 	border-radius:15px;
 	display:inline-block;
-	font-size:25px;
+	font-size:18px;
 	padding:35px 0px;
+	margin-left:50px;
+	margin-right:50px;
 
 }
 
 #refill{
 	width:1025px;
-	height:100px;
 	margin-bottom:20px;
+	text-align:left;
 }
 
 #notifications{
@@ -101,9 +104,14 @@ div.landingIcon img{
 	height:500px;
 }
 
+#notifications .notificationRow{
+	text-align:left;
+}
+
 #balance{
 	width:380px;
 	font-family:bebasNeue;
+	margin-bottom:20px;
 }
 
 #balance #number{
@@ -157,4 +165,23 @@ input.customInput{
 #rightPane{
 	display:inline-block;
 	width:380px;
+}
+
+#notifications img{
+	width:24px;
+	padding-right:10px;
+}
+
+#logOut{
+	text-align:right;
+	margin-right:170px;
+	margin-top:65px;
+}
+
+#wallet{
+	width:570px;
+}
+
+#refillHeader{
+	margin-right:20px;
 }
