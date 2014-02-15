@@ -19,7 +19,7 @@ body{
 	text-align:center;
 	font-family:dosisBold;
 	font-size:25px;
-	margin:auto 0;
+	width:100%;
 }
 
 #giveMeTheTip{
@@ -38,6 +38,7 @@ h2{
 	padding:0;
 	font-size:37px;
 	display:inline;
+
 }
 
 a{
@@ -87,21 +88,22 @@ div.landingIcon img{
 	display:inline-block;
 	font-size:18px;
 	padding:35px 0px;
-	margin-left:50px;
-	margin-right:50px;
 
 }
 
 #refill{
-	width:1025px;
+	width:100%;
 	margin-bottom:20px;
-	text-align:left;
+	text-align:center;
 }
-
+#refilllabel{
+	padding-right:20px;
+}
 #notifications{
-	width:620px;
+	width:60%;
 	margin-right:20px;
 	height:500px;
+	float:left;
 }
 
 #notifications .notificationRow{
@@ -109,9 +111,10 @@ div.landingIcon img{
 }
 
 #balance{
-	width:380px;
+	width:calc(60%-20px);
 	font-family:bebasNeue;
 	margin-bottom:20px;
+	float:left;
 }
 
 #balance #number{
@@ -157,14 +160,11 @@ input.customInput{
 		width:185px;
 }
 
-#leftPane{
-	display:inline-block;
-	width:620px;
-}
+
 
 #rightPane{
 	display:inline-block;
-	width:380px;
+	float:left;
 }
 
 #notifications img{
@@ -179,9 +179,13 @@ input.customInput{
 }
 
 #wallet{
-	width:570px;
+	width:50%;
 }
 
 #refillHeader{
-	margin-right:20px;
+	padding-right:20px;
+}
+#content{
+	width:60%;
+	margin: 0 auto;
 }

@@ -8,10 +8,11 @@
 	<script></script>
 	<div id="logOut"><a  href="#">LOGE OUT</a></div>
 	<div id="giveMeTheTip">GIVE ME THE TIP</div>
-	<div class="whiteBox" id="refill">
-		<h2 id="refillHeader">SUCH REFILL</h2><p style="display:inline;">Send Dogecoins to: <input id="wallet" type="text" class="customInput" /></p>
-	</div>
 	<div id="content">
+		<div class="whiteBox" id="refill">
+			<h2 id="refillHeader">SUCH REFILL</h2><p style="display:inline;" id="refilllabel">Send Dogecoins to: </p><input id="wallet" type="text" class="customInput" />
+		</div>
+	
 		<div id="leftPane">
 			<div class="whiteBox" id="notifications">
 				<h2>MUCH NOTIFICATION</h2>
