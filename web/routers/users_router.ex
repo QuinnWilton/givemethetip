@@ -12,13 +12,27 @@ defmodule UsersRouter do
     conn.resp 200, json
   end
 
+  put "/:user_id/deposit" do
+    user = Amnesia.transaction do
+      user = binary_to_integer(user_id) |> User.read
+      deposited = DogeAPI.get_address_received(System.get_env("DOGE_API_KEY"), user.wallet).body
+      user.balance(user.balance + deposited - user.deposited).write
+      user.deposited(deposited)
+      user
+    end
+
+    { :ok, json } = JSEX.encode user
+    conn.resp 200, json
+  end
+
   post "/" do
     user = Amnesia.transaction do
       wallet = DogeAPI.get_new_address(System.get_env("DOGE_API_KEY"), conn.params[:facebook_userid]).body
       User[
         facebook_userid: conn.params[:facebook_userid],
         balance: 0,
-        wallet: wallet
+        wallet: wallet,
+        deposited: 0
       ].write
     end
 

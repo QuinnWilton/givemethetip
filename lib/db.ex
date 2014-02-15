@@ -13,10 +13,10 @@ defdatabase Database do
     end
 	end
 
-  deftable User, [{ :id, autoincrement }, :facebook_userid, :balance, :wallet] do
+  deftable User, [{ :id, autoincrement }, :facebook_userid, :balance, :wallet, :deposited] do
     require Database.Tip
 
-    @type t :: User[id: integer, facebook_userid: String.t, balance: integer, wallet: String.t]
+    @type t :: User[id: integer, facebook_userid: String.t, balance: integer, wallet: String.t, deposited: integer]
 
     def tips_sent(self) do
       Database.Tip.read(self.id)
