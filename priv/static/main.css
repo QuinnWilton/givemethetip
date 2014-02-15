@@ -13,12 +13,12 @@ body{
 	color: #343745;
 	text-align:center;
 	font-family:dosisBold;
-	font-size:16px;
+	font-size:22px;
 }
 
 #giveMeTheTip{
 	color: #e75849;
-	font-size:50px;
+	font-size:75px;
 	font-family:bebasNeue;
 	margin:0;
 	padding:0;
@@ -34,6 +34,10 @@ a{
 div.landingIcon{
 	display:inline-block;
 	margin:0 30px;
+}
+
+div.landingIcon img{
+	height:70px;
 }
 
 #icons{
