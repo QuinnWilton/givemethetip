@@ -31,36 +31,12 @@ a{
 	font-family:bebasNeue;
 }
 
-
-#signupButton{
-	background-color:#343745;
-	color:#ffffff;
-	border-radius:3px;
-	padding:6px 40px;
-	font-size:36px;
-	border:0;
-	font-family:bebasNeue;
-	margin-bottom:20px;
-}
-
-#signupButton:hover{
-	color:grey;
-	cursor: pointer;
-}
-
 div.landingIcon{
 	display:inline-block;
 	margin:0 30px;
 }
 
 #icons{
-	margin:70px 0px;
-}
-
-#icons img{
-	width:;
-}
-
-#logIn{
-	font-size:36px;
+	margin-top:70px;
+	margin-bottom:20px;
 }
