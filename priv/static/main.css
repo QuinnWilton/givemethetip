@@ -141,7 +141,7 @@ div.landingIcon img{
 }
 
 #withdraw{
-	width:380px;
+	width:calc(60% - 20px);
 }
 
 input.customInput{
@@ -157,7 +157,7 @@ input.customInput{
 
 #withdraw #enterAmount{
 		padding:10px;
-		width:185px;
+		width:10px;
 }
 
 
