@@ -9,7 +9,10 @@ defmodule ApplicationRouter do
   forward "/tips", to: TipsRouter
 
   get "/" do
-    conn = conn.assign(:title, "Welcome to Dynamo!")
     render conn, "index.html"
+  end
+
+  get "/dashboard" do
+    render conn, "dashboard.html"
   end
 end
