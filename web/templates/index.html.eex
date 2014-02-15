@@ -3,9 +3,6 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="/static/main.css">
 	<link rel="shortcut icon" href="/static/favicon.ico" />
-	<script src='jquery-1.8.3.min.js'></script>
-	<script type="text/javascript">
-	</script>
 </head>
 <body>
 	<div id="giveMeTheTip">GIVE ME THE TIP</div>
