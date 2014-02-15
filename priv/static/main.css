@@ -1,0 +1,66 @@
+@font-face{
+	font-family:bebasNeue;
+	src: url(BebasNeue.otf);
+}
+
+@font-face{
+	font-family:dosisBold;
+	src: url(Dosis-Bold.ttf);
+}
+
+body{
+	background-color: #fdf2d8;
+	color: #343745;
+	text-align:center;
+	font-family:dosisBold;
+	font-size:16px;
+}
+
+#giveMeTheTip{
+	color: #e75849;
+	font-size:64px;
+	font-family:bebasNeue;
+	margin:0;
+	padding:0;
+	margin-top:50px;
+}
+
+a{
+	text-decoration: none;
+	color: #343745;
+	font-family:bebasNeue;
+}
+
+
+#signupButton{
+	background-color:#343745;
+	color:#ffffff;
+	border-radius:3px;
+	padding:6px 40px;
+	font-size:36px;
+	border:0;
+	font-family:bebasNeue;
+	margin-bottom:20px;
+}
+
+#signupButton:hover{
+	color:grey;
+	cursor: pointer;
+}
+
+div.landingIcon{
+	display:inline-block;
+	margin:0 30px;
+}
+
+#icons{
+	margin:70px 0px;
+}
+
+#icons img{
+	width:;
+}
+
+#logIn{
+	font-size:36px;
+}
