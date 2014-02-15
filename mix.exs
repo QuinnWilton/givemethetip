@@ -12,7 +12,7 @@ defmodule Givemethetip.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    [ applications: [:cowboy, :dynamo, :dogeapi],
+    [ applications: [:cowboy, :dynamo, :dogeapi, :amnesia],
       mod: { Givemethetip, [] } ]
   end
 
@@ -20,7 +20,8 @@ defmodule Givemethetip.Mixfile do
     [
       { :cowboy, github: "extend/cowboy" },
       { :dynamo, "~> 0.1.0-dev", github: "elixir-lang/dynamo" },
-      { :dogeapi, github: "ShaneWilton/dogeapi-elixir" }
+      { :dogeapi, github: "ShaneWilton/dogeapi-elixir" },
+      { :amnesia, github: "meh/amnesia" }
     ]
   end
 end
