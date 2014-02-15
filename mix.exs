@@ -21,7 +21,8 @@ defmodule Givemethetip.Mixfile do
       { :cowboy, github: "extend/cowboy" },
       { :dynamo, "~> 0.1.0-dev", github: "elixir-lang/dynamo" },
       { :dogeapi, github: "ShaneWilton/dogeapi-elixir" },
-      { :amnesia, github: "meh/amnesia" }
+      { :amnesia, github: "meh/amnesia" },
+      { :jsex, github: "talentdeficit/jsex" }
     ]
   end
 end

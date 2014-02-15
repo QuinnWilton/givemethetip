@@ -5,6 +5,7 @@ defmodule ApplicationRouter do
     conn.fetch([:cookies, :params])
   end
 
+  forward "/users", to: UsersRouter
   forward "/tips", to: TipsRouter
 
   get "/" do
