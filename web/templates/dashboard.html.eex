@@ -23,7 +23,7 @@
 			<div class="whiteBox" id="notifications">
 				<h2>MUCH NOTIFICATION</h2>
 				<div id="notificationContainer">
-					<%= lc { sender, recipient, amount } inlist @events do %>
+					<%= lc { sender, recipient, amount } inlist Enum.reverse(@events) do %>
 						<div class="notificationRow">
 						<%= if sender == @user_id do %>
 							<img src="/static/notification_heart.png"/>
