@@ -15,12 +15,13 @@ defmodule Givemethetip.Dynamo do
     # You can turn off static assets by setting it to false
     static_route: "/static"
 
-  # Uncomment the lines below to enable the cookie session store
-  # config :dynamo,
-  #   session_store: Session.CookieStore,
-  #   session_options:
-  #     [ key: "_givemethetip_session",
-  #       secret: "ZJ2qKb/ZJvVtWbegN9ITdvxdGHcsYy4/8Jb8HIPpjGEwInaeGcAWTrkH0A4kj0DS"]
+  # I realize these shouldn't be hardcoded in version control
+  # It's a hackathon. Hack us if you want.
+  config :dynamo,
+    session_store: Session.CookieStore,
+    session_options:
+      [ key: "_givemethetip_session",
+        secret: "ZJ2qKb/ZJvVtWbegN9ITdvxdGHcsYy4/8Jb8HIPpjGEwInaeGcAWTrkH0A4kj0DS"]
 
   # Default functionality available in templates
   templates do

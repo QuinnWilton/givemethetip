@@ -6,11 +6,11 @@
 <body>
 	<div id="fb-root"></div>
 	<script></script>
-	<div id="logOut"><a  href="#">LOGE OUT</a></div>
+	<div id="logOut"><a  href="/logout">LOGE OUT</a></div>
 	<div id="giveMeTheTip">GIVE ME THE TIP</div>
 	<div id="content">
 		<div class="whiteBox" id="refill">
-			<div id="test"><h2 id="refillHeader">SUCH REFILL</h2><p id="refilllabel">Send Dogecoins to: </p><input id="wallet" type="text" class="customInput"/></div>
+			<div id="test"><h2 id="refillHeader">SUCH REFILL</h2><p id="refilllabel">Send Dogecoins to: </p><input id="wallet" type="text" class="customInput" readonly="readonly" value=<%= @wallet %>/></div>
 		</div>
 			<div class="whiteBox" id="notifications">
 				<h2>MUCH NOTIFICATION</h2>
@@ -30,7 +30,7 @@
 		<div id="rightPane">
 			<div class="whiteBox" id="balance">
 				<h2 style="display:block;">BALANCE, WOW</h2>
-				<span id="number">23</span>
+				<span id="number"><%= @balance %></span>
 				<span id="units">DOGECOINS</span>
 			</div>
 			<div class="whiteBox" id="withdraw">

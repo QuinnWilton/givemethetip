@@ -48,7 +48,8 @@ defmodule UsersRouter do
     user = Amnesia.transaction do
       wallet = DogeAPI.get_new_address(System.get_env("DOGE_API_KEY"), conn.params[:facebook_userid]).body
       User[
-        facebook_userid: conn.params[:facebook_userid],
+        user_id: conn.params[:user_id],
+        name: conn.params[:name],
         balance: 0,
         wallet: wallet,
         deposited: 0
