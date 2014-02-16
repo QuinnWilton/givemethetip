@@ -20,14 +20,7 @@ defmodule ApplicationRouter do
     user = Amnesia.transaction do
       user = Database.User.read(user_id)
       if user == nil do
-        wallet = DogeAPI.get_new_address(System.get_env("DOGE_API_KEY"), user_id).body
-        User[
-          user_id: user_id,
-          name: name,
-          balance: 10,
-          wallet: wallet,
-          deposited: 0
-        ].write
+        UsersModel.create(user_id, name)
       end
       Database.User.read(user_id)
     end
