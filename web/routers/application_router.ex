@@ -46,6 +46,21 @@ defmodule ApplicationRouter do
     end
   end
 
+  post "/tip" do
+    Amnesia.transation do
+      sender_user_id    = conn.params[:sender_user_id]
+      recipient_user_id = conn.params[:recipient_user_id]
+      amount            = conn.params[:amount]
+
+      if User.read(sender_user_id) do
+        Models.Users.create(sender_user_id, "")
+        Models.Tips.create_unconditional("Shibe", sender_user_id, 10)
+      end
+
+      Models.Tips.create(sender_user_id, recipient_user_id, amount)
+    end
+  end
+
   defp authenticate_user(conn) do
     unless get_session(conn, :user_id) do
       redirect! conn, to: "/"
