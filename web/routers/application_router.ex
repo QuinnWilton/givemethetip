@@ -47,7 +47,7 @@ defmodule ApplicationRouter do
   end
 
   post "/tip" do
-    Amnesia.transation do
+    Amnesia.transaction do
       sender_user_id    = conn.params[:sender_user_id]
       recipient_user_id = conn.params[:recipient_user_id]
       amount            = conn.params[:amount]
