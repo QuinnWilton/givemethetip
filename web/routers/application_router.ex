@@ -2,6 +2,8 @@ defmodule ApplicationRouter do
   use Dynamo.Router
   use Amnesia
   use Database
+  require Database.Tip
+  require Exquisite
 
   prepare do
     conn.fetch([:session, :params])
@@ -32,6 +34,14 @@ defmodule ApplicationRouter do
       user = User.read(user_id)
       conn = conn.assign(:balance, Models.Users.balance(user_id))
       conn = conn.assign(:wallet, user.wallet)
+
+      events = Database.Tip.where(recipient_user_id == user_id).values
+        |> Enum.map &({ &1.sender_user_id, &1.recipient_user_id, &1.amount })
+
+      conn = conn.assign(:user_id, user_id)
+      conn = conn.assign(:events, events)
+      IO.puts inspect(events)
+
       render conn, "dashboard.html"
     end
   end

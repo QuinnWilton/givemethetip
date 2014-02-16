@@ -23,43 +23,19 @@
 			<div class="whiteBox" id="notifications">
 				<h2>MUCH NOTIFICATION</h2>
 				<div id="notificationContainer">
-					<div class="notificationRow">
-						<img src="/static/notification_heart.png"/>
-						You tipped <span class="name" id="name1">John Appleseed</span> <span class="amount" id="amount1">6</span> Dogecoins
-					</div>
-					<div class="notificationRow">
-						<img src="/static/notification_jar.png"/>
-						<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
-					</div>
-					<div class="notificationRow">
-						<img src="/static/notification_jar.png"/>
-						<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
-					</div>
-					<div class="notificationRow">
-						<img src="/static/notification_jar.png"/>
-						<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
-					</div>
-					<div class="notificationRow">
-						<img src="/static/notification_jar.png"/>
-						<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
-					</div>
-					<div class="notificationRow">
-						<img src="/static/notification_jar.png"/>
-						<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
-					</div>
-					<div class="notificationRow">
-						<img src="/static/notification_jar.png"/>
-						<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
-					</div>
-					<div class="notificationRow">
-						<img src="/static/notification_jar.png"/>
-						<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
-					</div>
-					<div class="notificationRow">
-						<img src="/static/notification_jar.png"/>
-						<span class="name" id="name2">John Appleseed</span> tipped you <span class="amount" id="amount2">10</span> Dogecoins
-					</div>
-			</div>
+					<%= lc { sender, recipient, amount } inlist @events do %>
+						<div class="notificationRow">
+						<%= if sender == @user_id do %>
+							<img src="/static/notification_heart.png"/>
+							You tipped <span class="name" id="name1"><%= recipient %></span> <span class="amount" id="amount1"><%= amount %></span> Dogecoins
+						<% end %>
+						<%= unless sender == @user_id do %>
+							<img src="/static/notification_jar.png"/>
+							<span class="name" id="name2"><%= sender %></span> tipped you <span class="amount" id="amount2"><%= amount %></span> Dogecoins
+						<% end %>
+						</div>
+					<% end %>
+				</div>
 			</div><!-- notification -->
 		<div id="rightPane">
 			<div class="whiteBox" id="balance">

@@ -7,6 +7,11 @@ defmodule Mix.Tasks.InstallDatabase do
 		Amnesia.start
 		Database.create(disk: [node])
 		Database.wait
+
+    Amnesia.transaction do
+      Models.Users.create("Shibe", "Shibe")
+    end
+
 		Amnesia.stop
 	end
 end
