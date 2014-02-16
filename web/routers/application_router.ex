@@ -6,8 +6,8 @@ defmodule ApplicationRouter do
   require Exquisite
 
   prepare do
-    conn.fetch([:session, :params])
-    conn = put_resp_header("Access-Control-Allow-Origin", "*", conn)
+    conn = conn.fetch([:session, :params])
+    conn.put_resp_header("access-control-allow-origin", "*")
   end
 
   get "/" do
