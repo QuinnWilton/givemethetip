@@ -7,6 +7,7 @@ defmodule ApplicationRouter do
 
   prepare do
     conn.fetch([:session, :params])
+    conn = put_resp_header("Access-Control-Allow-Origin", "*", conn)
   end
 
   get "/" do
