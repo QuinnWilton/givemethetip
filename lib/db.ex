@@ -19,11 +19,11 @@ defdatabase Database do
     @type t :: User[user_id: String.t, name: String.t, balance: integer, wallet: String.t, deposited: integer]
 
     def tips_sent(self) do
-      Database.Tip.read(self.id)
+      Database.Tip.read(self.user_id)
     end
 
     def tips_received(self) do
-      Database.Tip.where(recipient_userid == self.id).values
+      Database.Tip.where(recipient_userid == self.user_id).values
     end
   end
 end
