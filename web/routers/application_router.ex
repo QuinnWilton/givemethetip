@@ -57,7 +57,11 @@ defmodule ApplicationRouter do
         Models.Tips.create_unconditional("Shibe", sender_user_id, 10)
       end
 
-      Models.Tips.create(sender_user_id, recipient_user_id, amount)
+      result = Models.Tips.create(sender_user_id, recipient_user_id, amount)
+      cond do
+          { :error, :insufficient_funds } = result -> conn.resp 422, "insufficient funds"
+          { :ok, tip } = result -> conn.resp 200, JSONEX.encode(tip)
+      end
     end
   end
 
