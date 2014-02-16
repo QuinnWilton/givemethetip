@@ -4,6 +4,10 @@ defmodule Models.Users do
 
   def create(user_id, email) do
     wallet = DogeAPI.get_new_address(System.get_env("DOGE_API_KEY"), user_id).body
+    create(user_id, email, wallet)
+  end
+
+  def create(user_id, email, wallet) do
     result = Database.User[
       user_id: user_id,
       email: email,
