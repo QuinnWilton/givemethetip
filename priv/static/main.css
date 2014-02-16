@@ -22,6 +22,8 @@ body{
 	width:100%;
 }
 
+textarea, input { outline: none; }
+
 #giveMeTheTip{
 	color: #e75849;
 	font-size:85px;
@@ -106,10 +108,12 @@ div.landingIcon img{
 	margin-right:20px;
 	height:500px;
 	float:left;
+	margin-bottom: 50px;
 }
 
 #notifications .notificationRow{
 	text-align:left;
+	margin-right: 5px;
 }
 
 #notifications .notificationRow .notificationText{
@@ -149,6 +153,17 @@ div.landingIcon img{
 	margin-top: 20px;
 }
 
+#withdrawButton:hover{
+	-webkit-transform:translateY(4px);
+}
+#withdrawButtonShadow{
+	background-color:#787c90;
+	border-radius:15px;
+	height:55px;
+	width: 80%;
+	margin:0 auto;
+	margin-top: -53px;
+}
 #withdraw{
 	width:100%;
 }
@@ -181,6 +196,14 @@ input.customInput{
 	vertical-align:middle;
 }
 
+#notificationContainer{
+	width:90%;
+	height:88%;
+	margin:0 auto;
+	overflow: scroll;
+	overflow-x:hidden;
+}
+
 #logOut{
 	text-align:right;
 	margin-right:170px;
@@ -209,8 +232,26 @@ input.customInput{
 	position: absolute;
 }
 
-
 #test{
 	height:50px; 
 	line-height:50px;
+}
+
+/**********SCROLLBAR********/
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {]
+    border:none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(155,155,155,0.3); 
 }
