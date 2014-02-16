@@ -15,9 +15,6 @@
 		<p id="cancel" onclick="hidePopup();">CANCEL</p>
 	</div>
 	<!-- LIGHTBOX END -->
-	<div id="fb-root"></div>
-	<script></script>
-	<div id="logOut"><a  href="/logout">LOGE OUT</a></div>
 	<div id="giveMeTheTip">GIVE ME THE TIP</div>
 	<div id="content">
 		<div class="whiteBox" id="refill">

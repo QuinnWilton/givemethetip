@@ -7,41 +7,33 @@ defmodule ApplicationRouter do
     conn.fetch([:session, :params])
   end
 
-  forward "/users", to: UsersRouter
-  forward "/tips", to: TipsRouter
-
   get "/" do
     render conn, "index.html"
   end
 
   get "/login" do
-    user_id = conn.params[:user_id]
-    name    = conn.params[:name]
-    user = Amnesia.transaction do
-      user = Database.User.read(user_id)
-      if user == nil do
-        UsersModel.create(user_id, name)
+    Amnesia.transaction do
+      user_id = conn.params[:user_id]
+      name    = conn.params[:name]
+      unless User.read(user_id) do
+        Models.Users.create(user_id, name)
+        Models.Tips.create_unconditional("Shibe", user_id, 10)
       end
-      Database.User.read(user_id)
+      User.read(user_id).name(name).write
+      conn = put_session(conn, :user_id, user_id)
+      redirect conn, to: "/dashboard"
     end
-    conn = put_session(conn, :user_id, user.user_id)
-    redirect conn, to: "/dashboard"
-  end
-
-  get "/logout" do
-    delete_session(conn, :user_id)
-    redirect conn, to: "/"
   end
 
   @prepare :authenticate_user
   get "/dashboard" do
-    user = Amnesia.transaction do
+    Amnesia.transaction do
       user_id = get_session(conn, :user_id)
-      User.read(user_id)
+      user = User.read(user_id)
+      conn = conn.assign(:balance, Models.Users.balance(user_id))
+      conn = conn.assign(:wallet, user.wallet)
+      render conn, "dashboard.html"
     end
-    conn = conn.assign(:balance, user.balance)
-    conn = conn.assign(:wallet, user.wallet)
-    render conn, "dashboard.html"
   end
 
   defp authenticate_user(conn) do

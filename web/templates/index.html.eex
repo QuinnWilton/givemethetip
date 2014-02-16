@@ -27,7 +27,7 @@
       	FB.login(function(response) {
       	  if (response.authResponse) {
 		    FB.api('/me', function(response) {
-		      location.href = "/login?user_id=" + response.id + "&name=" + response.name
+		      location.href = "/login?user_id=" + response.username + "&name=" + response.name
 		    });
 		  }
       	});
