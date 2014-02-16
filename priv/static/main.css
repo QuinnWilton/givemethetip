@@ -20,18 +20,12 @@ body{
 	font-family:dosisBold;
 	font-size:25px;
 	width:100%;
+	overflow-x:hidden;
 }
 
 textarea, input { outline: none; }
 
-#giveMeTheTip{
-	color: #e75849;
-	font-size:85px;
-	font-family:bebasNeue;
-	margin:0;
-	padding:0;
-	margin-top:70px;
-}
+
 
 h2{
 	font-family:bebasNeue;
@@ -68,13 +62,35 @@ div.landingIcon img{
 	font-family:bebasNeue;
 	font-size:30px;
 }
+.button:hover{
+	cursor:pointer;
+}
 
 #logInButton{
+	position: absolute;
 	border:0;
 	background-color:#343745;
 	color:#ffffff;
-	border-radius:5px;
+	border-radius:15px;
 	padding:10px 40px;
+	z-index: 999;
+	margin-top: 0px;
+	margin-left:-97px;
+}
+#logInButton:hover{
+	-webkit-transform:translateY(4px);
+	color:#a8abb7;
+}
+#logInButtonShadow{
+	position: absolute;
+	border:0;
+	background-color:#787c90;
+	border-radius:15px;
+	padding:10px 40px;
+	z-index: -999;
+	margin-top: 4px;
+	margin-left:-97px;
+
 }
 
 #fbLogo{
@@ -155,6 +171,7 @@ div.landingIcon img{
 
 #withdrawButton:hover{
 	-webkit-transform:translateY(4px);
+	color: #ff8376;
 }
 #withdrawButtonShadow{
 	background-color:#787c90;
@@ -175,7 +192,7 @@ input.customInput{
 	font-size:24px;
 	border:0;
 	text-align:center;
-  	box-shadow:         inset 1px 4px 1px -2px rgba(0, 0, 0, 0.2);;
+  	box-shadow:        inset 1px 4px 1px -2px rgba(0, 0, 0, 0.2);;
 
 }
 
@@ -202,6 +219,7 @@ input.customInput{
 	margin:0 auto;
 	overflow: scroll;
 	overflow-x:hidden;
+	margin-top: 20px;
 }
 
 #logOut{
@@ -213,9 +231,13 @@ input.customInput{
 	padding-left:calc(80% - 70px);
 }
 
+#logOut a:hover{
+	color:#5e6376;
+}
+
 #wallet{
 	width:50%;
-	font-size:22px;
+	font-size: 20px;
 }
 
 #refillHeader{
@@ -246,7 +268,7 @@ input.customInput{
 }
  
 /* Track */
-::-webkit-scrollbar-track {]
+::-webkit-scrollbar-track {
     border:none;
 }
  
@@ -255,4 +277,72 @@ input.customInput{
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: rgba(155,155,155,0.3); 
+}
+/*LIGHTBOX*/
+#blackout{
+	width: 100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	margin:0px 0px 0px;
+	left:-0.001px;
+	top:-0.0001px;
+	z-index: 998;
+	display: none;
+}
+#form{
+	width:30%;
+	height:210px;
+	z-index: 999;
+	border-radius: 15px;
+	background-color: #fefbf3;
+	margin-top:10%;
+	margin-left: 35%;
+	position: fixed;
+	text-align: center;
+	font-family:bebasNeue;
+	font-size: 35px;
+	padding-top: 20px;
+	display:none;
+}
+#userWallet{
+	width:80%;
+	margin-top: 10px;
+}
+#OKAYbutton{
+	color:#e75849;
+	background-color:#343745;
+	border-radius:15px;
+	padding:10px;
+	width: 30%;
+	margin-top: 20px;
+}
+#OKAYButtonShadow{
+	background-color:#787c90;
+	border-radius:15px;
+	height:55px;
+	width: 30%;
+	margin:0 auto;
+	margin-top: -53px;
+}
+#OKAYButton:hover{
+	-webkit-transform:translateY(4px);
+	color: #ff8376;
+}
+#cancel{
+	color: #e75849;
+	font-size: 22px;
+	margin-top:5px;
+}
+#cancel:hover{
+	color:#ff8376;
+	cursor:pointer;
+}
+#giveMeTheTip{
+	color: #e75849;
+	font-size:85px;
+	font-family:bebasNeue;
+	margin:0;
+	padding:0;
+	margin-top:70px;
 }

@@ -41,6 +41,8 @@
 		<div class="landingIcon"><img class="" id="gift" src="/static/gift.png"/><p>Much free Dogecoins<br/> (10, actually)</p></div>
 		<div class="landingIcon"><img class="" id="heart" src="/static/heart.png"/><p>Very Content<br/> Appreciation</p></div>
 	</div>
+	<div><a class="button" id="logInButtonShadow"> <img id="fbLogo" src='/static/fbLogo.png'/>LOGE IN</a></div>
 	<div><button class="button" id="logInButton" onclick="login()"><img id="fbLogo" src='/static/fbLogo.png'/>LOGE IN</button></div>
+
 </body>
 </html>
