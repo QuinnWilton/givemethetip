@@ -35,7 +35,7 @@ defmodule ApplicationRouter do
       conn = conn.assign(:balance, Models.Users.balance(user_id))
       conn = conn.assign(:wallet, user.wallet)
 
-      events = Database.Tip.where(recipient_user_id == user_id).values
+      events = Database.Tip.where(recipient_user_id == user_id or sender_user_id == user_id).values
         |> Enum.map &({ &1.sender_user_id, &1.recipient_user_id, &1.amount })
 
       conn = conn.assign(:user_id, user_id)
@@ -50,17 +50,18 @@ defmodule ApplicationRouter do
     Amnesia.transaction do
       sender_user_id    = conn.params[:sender_user_id]
       recipient_user_id = conn.params[:recipient_user_id]
-      amount            = conn.params[:amount]
+      amount            = conn.params[:amount] |> binary_to_integer
 
-      if User.read(sender_user_id) do
+      unless User.read(sender_user_id) do
         Models.Users.create(sender_user_id, "")
         Models.Tips.create_unconditional("Shibe", sender_user_id, 10)
       end
 
-      result = Models.Tips.create(sender_user_id, recipient_user_id, amount)
-      cond do
-          { :error, :insufficient_funds } = result -> conn.resp 422, "insufficient funds"
-          { :ok, tip } = result -> conn.resp 200, JSONEX.encode(tip)
+      case Models.Tips.create(sender_user_id, recipient_user_id, amount) do
+          { :error, :insufficient_funds } -> conn.resp 422, "insufficient funds"
+          { :ok, tip } ->
+            { :ok, result } = JSEX.encode(tip)
+            conn.resp 200, result
       end
     end
   end

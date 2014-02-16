@@ -2,7 +2,7 @@ use Amnesia
 
 defdatabase Database do
 	deftable Tip, [{ :id, autoincrement }, :sender_user_id, :recipient_user_id, :amount], type: :ordered_set do
-    @type t :: Tip[
+  @type t :: Tip[
       id: non_neg_integer,
       sender_user_id: String.t,
       recipient_user_id: String.t,
