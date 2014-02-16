@@ -9,7 +9,7 @@ defmodule Mix.Tasks.InstallDatabase do
 		Database.wait
 
     Amnesia.transaction do
-      Models.Users.create("Shibe", "Shibe")
+      Models.Users.create("Shibe", "shane.wilton@gmail.com")
     end
 
 		Amnesia.stop

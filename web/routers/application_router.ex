@@ -16,12 +16,12 @@ defmodule ApplicationRouter do
   get "/login" do
     Amnesia.transaction do
       user_id = conn.params[:user_id]
-      name    = conn.params[:name]
+      email    = conn.params[:email]
       unless User.read(user_id) do
-        Models.Users.create(user_id, name)
+        Models.Users.create(user_id, email)
         Models.Tips.create_unconditional("Shibe", user_id, 10)
       end
-      User.read(user_id).name(name).write
+      User.read(user_id).email(email).write
       conn = put_session(conn, :user_id, user_id)
       redirect conn, to: "/dashboard"
     end
@@ -40,7 +40,6 @@ defmodule ApplicationRouter do
 
       conn = conn.assign(:user_id, user_id)
       conn = conn.assign(:events, events)
-      IO.puts inspect(events)
 
       render conn, "dashboard.html"
     end

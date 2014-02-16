@@ -10,10 +10,10 @@ defdatabase Database do
     ]
 	end
 
-  deftable User, [:user_id, :name, :wallet] do
+  deftable User, [:user_id, :email, :wallet] do
     @type t :: User[
       user_id: String.t,
-      name: String.t,
+      email: String.t,
       wallet: String.t
     ]
   end

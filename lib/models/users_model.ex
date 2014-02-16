@@ -2,11 +2,11 @@ defmodule Models.Users do
   require Database.Tip
   require Exquisite
 
-  def create(user_id, name) do
+  def create(user_id, email) do
     wallet = DogeAPI.get_new_address(System.get_env("DOGE_API_KEY"), user_id).body
     result = Database.User[
       user_id: user_id,
-      name: name,
+      email: email,
       wallet: wallet
     ].write
 
