@@ -106,6 +106,7 @@ div.landingIcon img{
 	margin-right:20px;
 	height:500px;
 	float:left;
+	margin-bottom: 50px;
 }
 
 #notifications .notificationRow{
@@ -149,6 +150,17 @@ div.landingIcon img{
 	margin-top: 20px;
 }
 
+#withdrawButton:hover{
+	-webkit-transform:translateY(4px);
+}
+#withdrawButtonShadow{
+	background-color:#787c90;
+	border-radius:15px;
+	height:55px;
+	width: 80%;
+	margin:0 auto;
+	margin-top: -53px;
+}
 #withdraw{
 	width:100%;
 }
@@ -179,6 +191,14 @@ input.customInput{
 	width:24px;
 	padding-right:10px;
 	vertical-align:middle;
+}
+
+#notificationContainer{
+	width:90%;
+	height:90%;
+	margin:0 auto;
+	overflow: scroll;
+	overflow-x:hidden;
 }
 
 #logOut{
