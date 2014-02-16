@@ -22,6 +22,8 @@ body{
 	width:100%;
 }
 
+textarea, input { outline: none; }
+
 #giveMeTheTip{
 	color: #e75849;
 	font-size:85px;
@@ -111,6 +113,7 @@ div.landingIcon img{
 
 #notifications .notificationRow{
 	text-align:left;
+	margin-right: 5px;
 }
 
 #notifications .notificationRow .notificationText{
@@ -195,7 +198,7 @@ input.customInput{
 
 #notificationContainer{
 	width:90%;
-	height:90%;
+	height:88%;
 	margin:0 auto;
 	overflow: scroll;
 	overflow-x:hidden;
@@ -229,8 +232,26 @@ input.customInput{
 	position: absolute;
 }
 
-
 #test{
 	height:50px; 
 	line-height:50px;
+}
+
+/**********SCROLLBAR********/
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {]
+    border:none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(155,155,155,0.3); 
 }
